@@ -5,11 +5,34 @@ This is a A Model Context Protocol server that provides read-only access to Hive
 - `execute_query(query: str)`: Run any SQL query on Impala and return the results as JSON.
 - `show_tables()`: List all tables available in the current database.
 
-## Usage with Claude Desktop
+## Usage with Claude Desktop/Cursor IDE
 
 To use this server with the Claude Desktop app or Cursor IDE, add the following configuration to the "mcpServers" section of your `claude_desktop_config.json` or `mcp.json` config file under Cursor setting:
 
-### Local installation (after cloning the repository)
+### Option 1: Direct installation from GitHub (Recommended)
+```json
+{
+  "mcpServers": {
+    "hive-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/dhirajkumarsinha27091982/hive-mcp-server@main",
+        "run-server"
+      ],
+      "env": {
+        "IMPALA_HOST": "coordinator-default-impala.example.com",
+        "IMPALA_PORT": "21050",
+        "IMPALA_USER": "username",
+        "IMPALA_PASSWORD": "password",
+        "IMPALA_DATABASE": "default"
+      }
+    }
+  }
+}
+```
+
+### Option 2: Local installation (after cloning the repository)
 ```json
 {
   "mcpServers": {
