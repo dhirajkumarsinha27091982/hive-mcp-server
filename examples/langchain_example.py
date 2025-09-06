@@ -17,17 +17,16 @@ llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 
 # Configuring MCP Server and Impala endpoint
 server_params = StdioServerParameters(
-    command="uv",
+    command="uvx",
     args=[
-          "--directory",
-          "/path/to/hive-mcp-server",
-          "run",
-          "src/hive_mcp_server/server.py"
+          "--from",
+          "git+https://github.com/dhirajkumarsinha27091982/hive-mcp-server@main",
+          "run-server"
         ],
     env={
         "IMPALA_HOST": "coordinator-default-impala.example.com",  # Update this for your Impala host
         "IMPALA_USER": "username",
-        "IMPALA_PASSWORD": "password",
+        "IMPALA_PASSWORD": "password"
     },
 )
 
