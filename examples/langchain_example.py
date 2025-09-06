@@ -27,7 +27,7 @@ server_params = StdioServerParameters(
         "IMPALA_HOST": "coordinator-default-impala.example.com",  # Update this for your Impala host
         "IMPALA_USER": "username",
         "IMPALA_PASSWORD": "password"
-    },
+    }
 )
 
 async def main():
