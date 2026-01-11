@@ -18,12 +18,12 @@ def execute_query(query: str) -> str:
     return impala_tools.execute_query(query)
 
 
-@mcp.tool()
-def show_tables() -> str:
-    """
-    Retrieve the list of table names in the current Impala database.
-    """
-    return impala_tools.show_tables()
+#@mcp.tool()
+#def show_tables() -> str:
+#    """
+#    Retrieve the list of table names in the current Impala database.
+#    """
+#    return impala_tools.show_tables()
 
 
 def main():

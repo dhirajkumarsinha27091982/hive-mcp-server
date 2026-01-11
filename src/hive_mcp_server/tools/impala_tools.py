@@ -54,7 +54,7 @@ def execute_query(query: str) -> str:
             conn.close()
 
 
-def show_tables() -> str:
+""" def show_tables() -> str:
     conn = None
     try:
         conn = get_db_connection()
@@ -67,4 +67,4 @@ def show_tables() -> str:
         return f"Error: {str(e)}"
     finally:
         if conn:
-            conn.close()
+            conn.close() """
